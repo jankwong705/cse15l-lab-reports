@@ -19,11 +19,13 @@ The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
 RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 ```
+
 You will be prompted to enter your password. It may not be showing any feedback. But you are indeed typing in your password. It is best to type each character in carefully so you don't have typos in your passwords, which will waste you a lot of time. 
 
 ```
 Password: 
 ```
+
 This is what you should be seeing after successfully logging into your remote comptuer:
 ![Image](part2.1.png)
 
@@ -52,6 +54,7 @@ This command prints out the content specified. The following is an example:
 
 ## Part 4: Moving Files with ```scp```
 The ```scp``` command allows us to move files from our own computer to the remote computer we're using. First, create a file called ```WhereAmI.java``` with the following code inside:
+
 ```
 class WhereAmI {
   public static void main(String[] args) {
@@ -62,6 +65,7 @@ class WhereAmI {
   }
 }
 ```
+
 ```getProperty``` is a command that returns you certain information of your computer. This file will prints out all the important information of your computer (or the remote comptuer you're connected to) such as username and the OS.
 
 It is convenient to have two terminals open side by side: one logged onto your own computer and one logged onto a remote computer. Click **Terminal** on the top and hit **Split Terminal** to do so. It will look something like this:
@@ -77,18 +81,22 @@ In TerminalA, type in the following command:
 **Make sure** that between the ```:``` and the directory, there is no space being typed in. Otherwise, it will give you an error which can potentially waste you 10 minutes before you can figure out the cause of it (*definitely not speaking from personal experience*).
 
 You will be prompted to enter your password, like when you log onto your account. After a successful copy, you should see something like this: 
+
 ```
 (base) owner@Jans-MacBook-Air Desktop % scp WhereAmI.java cs15lfa22ng@ieng6.ucsd.edu:~/
 
 WhereAmI.java         100%  304    41.3KB/s   00:00
 ```
+
 To make sure that your remote computer receives the files, try using ```ls ~``` to list the files in its home directory. 
 
 To run ```WhereAmI.java``` on both computers, type in the following commands in both TerminalA and TerminalB:
+
 ```
 javac WhereAmI.java
 java WhereAmI
 ```
+
 The information shown on both terminals correspond to the computers they are logged on to: they should show different things. It should be something like this:
 ![Image](part4.3.png)
 One noticable difference is the OS systems. On this computer, it is using Mac OS. On the remote computer, it is Linux.
@@ -100,11 +108,13 @@ Typing in your passwords every time you have to do something is certainly annoyi
 Let's go back to our split terminals. On TerminalA, type in the following code: ```ssh-keygen```
 
 Hit **Enter** or **Return** when prompted with 
+
 ```
 Enter file in which to save the key (/Users/joe/.ssh/id_rsa):
 ```
 
 Hit **Enter** or **Return** again when prompted with both of these codes:
+
 ```
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
@@ -128,9 +138,11 @@ mkdir .ssh
 Then, log out of your cs15lfa22 account.
 
 Back in TerminalA, remember that directory you've save? we have to use the ```scp``` command to copy that file to our remote computer at that directory we just created. Type in the following command, using your own directory:
+
 ```
 scp /Users/owner/.ssh/id_rsa cs15lfa22ng@ieng6.ucsd.edu:~/.ssh/authorized_keys
 ```
+
 This should be the last time you'll ever have to type in your passwords. It should look something like this:
 ![Image](part5.2.png)
 
@@ -152,9 +164,11 @@ Using ```;``` to separate commands allows you to run several commands on the sam
 ![Image](part6.2.png)
 
 We can run ```WhereAmI.java``` more efficiently using the above techniques, with the following code:
+
 ```
 ssh cs15lfa22ng@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
 ```
+
 The result will look something like this:
 ![Image](part6.3.png)
 ***

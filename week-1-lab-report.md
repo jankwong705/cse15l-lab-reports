@@ -48,7 +48,7 @@ It lists the contents of the directory you're currently in. For example, ```ls ~
 If you try to ```ls``` a folder of another person's account, your access will be denied:
 ![Image](part3.2.png)
 
-```cat```
+``` cat ```
 
 This command prints out the content specified. The following is an example:
 ![Image](part3.3.png)
@@ -68,7 +68,7 @@ class WhereAmI {
 }
 ```
 
-```getProperty``` is a command that returns you certain information of your computer. This file will prints out all the important information of your computer (or the remote comptuer you're connected to) such as username and the OS.
+``` getProperty ``` is a command that returns you certain information of your computer. This file will prints out all the important information of your computer (or the remote comptuer you're connected to) such as username and the OS.
 
 It is convenient to have two terminals open side by side: one logged onto your own computer and one logged onto a remote computer. Click **Terminal** on the top and hit **Split Terminal** to do so. It will look something like this:
 ![Image](part4.1.png)
@@ -94,7 +94,7 @@ WhereAmI.java         100%  304    41.3KB/s   00:00
 
 To make sure that your remote computer receives the files, try using ```ls ~``` to list the files in its home directory. 
 
-To run ```WhereAmI.java``` on both computers, type in the following commands in both TerminalA and TerminalB:
+To run ``` WhereAmI.java ``` on both computers, type in the following commands in both TerminalA and TerminalB:
 
 ```
 javac WhereAmI.java
@@ -110,7 +110,7 @@ One noticable difference is the OS systems. On this computer, it is using Mac OS
 ## Part 5: Setting an SSH Key
 Typing in your passwords every time you have to do something is certainly annoying, and it prompts typos which make waste you a lot of time. One way of bypassing typing in your password everytime you log onto your remote computer is to create a pair of keys with one on each computer. That way, we don't have to type in our passwords everytime we have to do something.
 
-Let's go back to our split terminals. On TerminalA, type in the following code: ```ssh-keygen```
+Let's go back to our split terminals. On TerminalA, type in the following code: ``` ssh-keygen ```
 
 Hit **Enter** or **Return** when prompted with 
 
@@ -130,9 +130,9 @@ You should see something like this if succeeded:
 
 You will get a directory similar to the following. Save it! You'll need it later!
 
-```/Users/owner/.ssh/id_rsa.pub```
+``` /Users/owner/.ssh/id_rsa.pub ```
 
-Make sure it has ```.pub```. It indicates that the file is a public key that should be stored in the ```.ssh``` directory in your remote computer.
+Make sure it has ``` .pub ```. It indicates that the file is a public key that should be stored in the ``` .ssh ``` directory in your remote computer.
 
 Now, in TerminalB, log into your cs15lfa22 account, type in the following command to make a new directory for your key. It may have already existed in the computer, but just type it in again just to make sure:
 
@@ -142,7 +142,7 @@ mkdir .ssh
 
 Then, log out of your cs15lfa22 account.
 
-Back in TerminalA, remember that directory you've save? we have to use the ```scp``` command to copy that file to our remote computer at that directory we just created. Type in the following command, using your own directory:
+Back in TerminalA, remember that directory you've save? we have to use the ``` scp ``` command to copy that file to our remote computer at that directory we just created. Type in the following command, using your own directory:
 
 ```
 scp /Users/owner/.ssh/id_rsa cs15lfa22ng@ieng6.ucsd.edu:~/.ssh/authorized_keys
@@ -158,17 +158,17 @@ Try logging into your remote computer in TerminalB. You should be able to withou
 ## Part 6: Optimize Remote Running
 Apart from using ssh keys to avoid typing in passwords, there are other ways that can make your remote conection more efficient and smooth. Below are some of the ways of improving efficiency:
 
-```ssh <your username>@ieng6.ucsd.edu "ls"```
+``` ssh <your username>@ieng6.ucsd.edu "ls" ```
 
-Writing a command in quotes after your ```ssh``` command will allow the command to run directly on the remote server.
+Writing a command in quotes after your ``` ssh ``` command will allow the command to run directly on the remote server.
 ![Image](part6.1.png)
 
-```javac WhereAmI.java; java WhereAmI```
+``` javac WhereAmI.java; java WhereAmI ```
 
-Using ```;``` to separate commands allows you to run several commands on the same line.
+Using ``` ; ``` to separate commands allows you to run several commands on the same line.
 ![Image](part6.2.png)
 
-We can run ```WhereAmI.java``` more efficiently using the above techniques, with the following code:
+We can run ``` WhereAmI.java ``` more efficiently using the above techniques, with the following code:
 
 ```
 ssh cs15lfa22ng@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"

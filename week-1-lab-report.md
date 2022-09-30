@@ -3,6 +3,7 @@
 ## Part 1: Installing Visual Studio Code
 You can download VS Code through [this link](https://code.visualstudio.com/). If you have successfully set up VS Code, you should be able to see this blank page: 
 ![Image](part1.1.png)
+
 Open a new terminal on VS Studio to enter commands. To do so on Mac, head to the top of the page, click **Terminal**, then click **New Terminal**. Something like this should be seen once successfully opening a terminal:
 ![Image](part1.2.png)
 ***
@@ -43,6 +44,7 @@ The ```cd``` command changes the current directory you're in. For example, ```cd
 
 It lists the contents of the directory you're currently in. For example, ```ls ~``` prints out the contents in your home directory:
 ![Image](part3.1.png)
+
 If you try to ```ls``` a folder of another person's account, your access will be denied:
 ![Image](part3.2.png)
 
@@ -70,8 +72,10 @@ class WhereAmI {
 
 It is convenient to have two terminals open side by side: one logged onto your own computer and one logged onto a remote computer. Click **Terminal** on the top and hit **Split Terminal** to do so. It will look something like this:
 ![Image](part4.1.png)
+
 Another step that you can take to maximize your convenience would be to change your directory to your Desktop with your ```WhereAmI.java``` file in it:
 ![Image](part4.2.png)
+
 We will refer to the terminal connected to your own computer **TerminalA** and the terminal connected to a remote computer **TerminalB** from now on.
 
 In TerminalA, type in the following command:
@@ -99,6 +103,7 @@ java WhereAmI
 
 The information shown on both terminals correspond to the computers they are logged on to: they should show different things. It should be something like this:
 ![Image](part4.3.png)
+
 One noticable difference is the OS systems. On this computer, it is using Mac OS. On the remote computer, it is Linux.
 ***
 

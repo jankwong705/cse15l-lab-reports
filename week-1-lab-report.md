@@ -40,7 +40,7 @@ You can now try out some commands in the terminal:
 
 The ```cd``` command changes the current directory you're in. For example, ```cd ~``` changes your current directory to your home directory.
 
-```ls```
+``` ls ```
 
 It lists the contents of the directory you're currently in. For example, ```ls ~``` prints out the contents in your home directory:
 ![Image](part3.1.png)

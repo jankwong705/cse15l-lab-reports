@@ -41,6 +41,7 @@ The ```cd``` command changes the current directory you're in. For example, ```cd
 
 It lists the contents of the directory you're currently in. For example, ```ls ~``` prints out the contents in your home directory:
 ![Image](part3.1.png)
+
 If you try to ```ls``` a folder of another person's account, your access will be denied:
 ![Image](part3.2.png)
 
@@ -85,10 +86,12 @@ WhereAmI.java         100%  304    41.3KB/s   00:00
 To make sure that your remote computer receives the files, try using ```ls ~``` to list the files in its home directory. 
 
 To run ```WhereAmI.java``` on both computers, type in the following commands in both TerminalA and TerminalB:
+
 ```
 javac WhereAmI.java
 java WhereAmI
 ```
+
 The information shown on both terminals correspond to the computers they are logged on to: they should show different things. It should be something like this:
 ![Image](part4.3.png)
 One noticable difference is the OS systems. On this computer, it is using Mac OS. On the remote computer, it is Linux.

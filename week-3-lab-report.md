@@ -71,7 +71,7 @@ Server Started! Visit http://localhost:4000 to visit.
 4000 is the port number we will be using. After we run the above commands, you will be given a link. In this case, it is ``` http://localhost:4000 ``` . Type this into your browser. We will be using our search engine there.
 
 
-### Adding:
+## Part 2: Adding
 
 Now, let's try adding stuff into the ArrayList. To add strings into the ArrayList, type in ``` /add?s=<string> ``` after ``` localhost.4000 ``` . This is the part of the code that will run if your path contains ``` /add ``` :
 
@@ -95,7 +95,7 @@ We can add more to our list:
 
 ![Image](lab2_part1.3.png)
 
-### Query:
+## Part 3: Query 
 
 Here's the fun part. Let's run some queries (searches). To do so, type in ``` /search?s=<strings to search> ``` . This is the part of the code that will run when your path contains ``` /search ``` :
 
@@ -121,3 +121,7 @@ It will split what you type in in an array like it did for ``` /run ``` . Then, 
 What if we search for something not in the ArrayList? It will reasonably return us an empty ArrayList:
 
 ![Image](lab2_part1.5.png)
+
+# Failures and Bugs
+
+## Part 1: 

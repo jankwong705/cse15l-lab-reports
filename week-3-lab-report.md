@@ -124,4 +124,47 @@ What if we search for something not in the ArrayList? It will reasonably return 
 
 # Failures and Bugs
 
-## Part 1: 
+## Part 1: ArrayExamples' Bugs
+
+### Failure-inducing Input
+There is a problem for our reverseInPlace method here. Here is what a failure-inducing input looks like:
+
+![Image](lab2_part2.1.png)
+
+### Symptoms
+We passed in a normal array ``` {1, 4, 6, 2} ``` into the method, expecting it to return ``` {2, 6, 4, 1} ``` . But this is the symptom we got:
+
+![Image](lab2_part2.2.png)
+
+### Bugs
+The bug for the reverseInPlace method is that the array itself is changing when we’re trying to access the old values. For example, when we are trying to change the value of the last index to that of the first index, the first index’s value has already been changed to that of the last index, so essentially the last index was not properly grabbing the original value of the first index. Instead, it was just copying its value over to itself, resulting in the improperly reversed array (the symptom).
+
+### Fixes
+I created a new array called temp and copied all the elements over to it. Then I assign the values of the end of temp to the front of arr, which reverses arr without changing the original values so they can be copied over successfully, properly returning a reversed ``` arr ``` .
+
+![Image](lab2_part2.3.png)
+
+## Part 2: LinkedList Bug
+
+### Failure-inucing Input
+We have a problem for our append method here. This is what a failure-inducing input looks like:
+
+![Image](lab2_part2.4.png)
+
+### Symptoms
+The problem occurs when we try to append 4 to the linked list. It gives an out-of-memory error:
+
+![Image](lab2_part2.5.png)
+
+### Bugs
+The bug occurs at a while-loop inside the method:
+
+![Image](lab2_part2.6.png)
+
+The while-loop only runs when n.next does not equal to ``` null ``` . The ``` n.next = new Node(value, null) ``` statement is placed inside the while-loop, meaning that n.next will never be null. Hence, it results in an infinite loop, causing the out-of-memory error (the symptom).
+
+### Fixes
+To fix it, I put the ``` n.next = new Node(value, null) ``` statement out of the loop, preventing the impossibility of n.next becoming null, eliminating the possibility of an infinite loop. Hence, there will not be an out-of-memory error.
+
+![Image](lab2_part2.7.png)
+

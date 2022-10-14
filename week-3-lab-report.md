@@ -168,3 +168,5 @@ To fix it, I put the ``` n.next = new Node(value, null) ``` statement out of the
 
 ![Image](lab2_part2.7.png)
 
+## Conclusion
+Thank you for visiting my lab report for week 3! 

@@ -206,5 +206,26 @@ This option, additional to returning you the file names and the lines containing
 911report/chapter-13.3.txt:467:                Statements of Prosecutor and Judge, United States v. Bin Laden, No. S(7) 98 Cr. 1023
 911report/chapter-13.3.txt:1060:                FBI Special Agent Daniel Coleman, United States v. Usama Bin Laden, No. S(7) 98 Cr.
 ```
-Let's say I want to learn more about Bin Laden when I am researching on the 911 tragedy. I can use the ``` -o ``` option to search for his name, which will return me which lines of the files he appears in. It is useful as that way I can go directly to those lines to read something more specific about him.
+Let's say I want to learn more about Bin Laden when I am researching on the 911 tragedy. I can use the ``` -n ``` option to search for his name, which will return me which lines of the files he appears in. It is useful as that way I can go directly to those lines to read something more specific about him.
 
+```
+% grep -n "circadian rhythms" */*.txt
+
+biomed/1471-213X-1-9.txt:12:        analysis of circadian rhythms in 
+biomed/1471-2202-3-1.txt:20:        neural and behavioral substrates of circadian rhythms
+biomed/1471-2202-3-1.txt:47:        examples of circadian rhythms, which are typically analyzed
+biomed/1471-2202-3-1.txt:664:          evaluate circadian rhythms data [see [ 44 ] ]). The area
+biomed/1471-2202-3-1.txt:1188:          Drosophila circadian rhythms data,
+biomed/1471-2202-3-20.txt:19:        lack circadian rhythms after lesioning of the SCN [ 6 7 8 9
+biomed/1471-2202-3-20.txt:20:        ] , suggesting that circadian rhythms and sleep homeostasis
+biomed/1471-2202-3-20.txt:59:        In both flies and mammals, circadian rhythms are thought
+biomed/1471-2202-3-20.txt:402:        circadian rhythms.
+biomed/1471-2202-3-5.txt:81:        analysis of circadian rhythms [ 27 ] . Here we apply two
+biomed/1471-244X-3-5.txt:269:        that regulates circadian rhythms responsible for many
+biomed/1471-244X-3-5.txt:328:        circadian rhythms that are correctable by light therapy [
+biomed/gb-2001-2-3-research0008.txt:23:        drive circadian rhythms in locomoter activity [ 16, 17].
+plos/journal.pbio.0020013.txt:12:        long-term memory, circadian rhythms, immune response, and biogenesis of organelles
+```
+Imagine that you are doing research on the circadian rhythm of humans. And you remember reading about its relations with other biological responses in our body. You can use the ``` -n ``` option to see which line it appears with the other biological phenomenon you have in your mind. You can then go straight to that line listed. Isn't that useful?
+
+```

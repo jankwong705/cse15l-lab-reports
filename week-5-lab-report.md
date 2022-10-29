@@ -9,7 +9,9 @@ The ``` grep ``` command is case-sensitive, meaning that it will return lines of
 
 We are searching through _every single file_ in the 911report file of the word "september". We should expect a massive list of results, right? Here's what we got instead:
 
-``` ./911report/chapter-13.5.txt:                www.september11victims.com/september11Victims); New York Times, Portraits: 9/11/01: ```
+``` 
+./911report/chapter-13.5.txt:                www.september11victims.com/september11Victims); New York Times, Portraits: 9/11/01: 
+```
 
 Only one pathetic line that doesn't tell us anything. And this is all due to us forgetting the capitalize the "s" in "September". However, everything will change if we add the ``` -i ``` option.
 
@@ -36,6 +38,7 @@ This is only a snippet of the output, but it already is telling us much more tha
 ./government/Gen_Account_Office/InternalControl_ai00021p.txt:Foreword
 ./government/Gen_Account_Office/Statements_Feb28-1997_volume.txt:FOREWORD
 ```
+
 A few of the reports in ./technical/government contains the word "FOREWORD". Using the ``` -i ``` option, it successfully searches all of the occurrences of "FOREWORD" without us having to capitalize the whole word. It surely saves time worrying about capitalization and allows us to quickly searches for the headers of these two reports.
 
 ```
@@ -85,6 +88,7 @@ The ``` -o ``` option displays _only_ the word that you are searching instead of
 911report/chapter-3.txt:CAPPS
 911report/chapter-3.txt:CAPPS
 ```
+
 Here, I am trying to see how often the term "CAPPS" appear in the files. If I didn't use the ``` -o ``` option, I would be given a huge glob of lines. It would be pretty unreadable. With the ``` -o ``` option, I can easily tell how often "CAPPS" appears in each chapter. Here, I can see that "CAPPS" is mentioned especially frequently in Chapter 1 of the 911report, but is barely talked about in Chapter 3.
 
 Let's look at another example:
@@ -169,6 +173,7 @@ government/Alcohol_Problems/Session2-PDF.txt:women
 government/Alcohol_Problems/Session2-PDF.txt:women
 government/Alcohol_Problems/Session2-PDF.txt:women
 ```
+
 We can see here that "men" are mentioned more often than "women" in the folder addressing alcohol problems. We can maybe deduce that men are more likely to have alcoholic issues than women. Or, we can claim that the articles have a bias against men. Here, the ``` -o ``` option is useful when we are comparing the frequency of the appearances of different words, whether to discover different social phenomena, or, just for fun!
 
 ```
@@ -206,6 +211,7 @@ This option, additional to returning you the file names and the lines containing
 911report/chapter-13.3.txt:467:                Statements of Prosecutor and Judge, United States v. Bin Laden, No. S(7) 98 Cr. 1023
 911report/chapter-13.3.txt:1060:                FBI Special Agent Daniel Coleman, United States v. Usama Bin Laden, No. S(7) 98 Cr.
 ```
+
 Let's say I want to learn more about Bin Laden when I am researching on the 911 tragedy. I can use the ``` -n ``` option to search for his name, which will return me which lines of the files he appears in. It is useful as that way I can go directly to those lines to read something more specific about him.
 
 ```
@@ -226,6 +232,16 @@ biomed/1471-244X-3-5.txt:328:        circadian rhythms that are correctable by l
 biomed/gb-2001-2-3-research0008.txt:23:        drive circadian rhythms in locomoter activity [ 16, 17].
 plos/journal.pbio.0020013.txt:12:        long-term memory, circadian rhythms, immune response, and biogenesis of organelles
 ```
+
 Imagine that you are doing research on the circadian rhythm of humans. And you remember reading about its relations with other biological responses in our body. You can use the ``` -n ``` option to see which line it appears with the other biological phenomenon you have in your mind. You can then go straight to that line listed. Isn't that useful?
 
 ```
+ % grep -n "Trend Analysis"  */Post_Rate_Comm/*.txt
+
+government/Post_Rate_Comm/Cohenetal_Cost_Function.txt:324:4.3 Trend Analysis
+```
+
+This option is also useful when you are trying to access a certain section of a paper without having to scroll through the entire article and missing the section, wasting a huge amount of time. In this example, I searched for the "Trend Analysis" section, which immediately returns me the line number of it. Now, I can conveniently head straight there without endlessly scrolling.
+
+## Conclusion
+Different options for the ``` grep ``` command can be very useful in assisting you from researching to just satisfying a random curiosity in your head. Go and try it out for yourself!

@@ -13,3 +13,6 @@ Week 3:
 
 Week 5:
 [Lab Report 3](https://jankwong705.github.io/cse15l-lab-reports/week-5-lab-report.html)
+
+Week 7:
+[Lab Report 4](https://jankwong705.github.io/cse15l-lab-reports/week-7-lab-report.html)

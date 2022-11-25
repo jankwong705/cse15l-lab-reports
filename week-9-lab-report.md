@@ -182,6 +182,8 @@ We will then cat results.txt which can provide feedback to the students. The std
 
 We will then close off by exitting with an exit code of 3 as the file contains failed tests.
 
+## Conclusion
 
+This is my grade script! It tests for whether the correct file exists, whether it compiles, and whether it passes all the tests!
 
 

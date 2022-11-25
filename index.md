@@ -16,3 +16,6 @@ Week 5:
 
 Week 7:
 [Lab Report 4](https://jankwong705.github.io/cse15l-lab-reports/week-7-lab-report.html)
+
+Week 9:
+[Lab Report 5](https://jankwong705.github.io/cse15l-lab-reports/week-9-lab-report.html)
